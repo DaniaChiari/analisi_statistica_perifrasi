@@ -53,6 +53,11 @@ analisi_statistica_perifrasi/
 ### dati_occorrenze.csv
 Il file in questione contiene i conteggi relativi alle occorrenze perifrastiche e non perifrastiche in ciascuna delle due sottosezioni (prosa accademica e stampa) di CORIS e Univers-ITA.
 
-## Visualizzazione notebook
+## Esecuzione e visualizzazione
 Puoi consultare l'analisi formattata con i grafici a questo link:
 [Visualizza Report Analisi Chi-Quadrato](https://daniachiari.github.io/analisi_statistica_perifrasi/analisi01_chi_quadrato.html)
+
+Per eseguire l'analisi in locale:
+1. Clonare il repository:
+   ```bash
+   git clone [https://github.com/DaniaChiari/analisi_statistica_perifrasi.git](https://github.com/DaniaChiari/analisi_statistica_perifrasi.git)
