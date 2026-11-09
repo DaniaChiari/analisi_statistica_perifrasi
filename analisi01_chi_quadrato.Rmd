@@ -1,0 +1,142 @@
+---
+title: 'Analisi Statistica: "andare a" + infinito'
+author: "Dania Chiari"
+date: "2026-11-08"
+output: html_document
+---
+
+## Variabili
+Le variabili di questo esperimento sono tre:
+
+1. **CRONOLOGIA**: variabile indipendente discreta nominale a due livelli: CORIS (corpus assunto come rappresentativo della generazione precedente) e Univers-ITA (corpus assunto come rappresentativo della generazione attuale)
+2. **REGISTRO**: variabile indipendente discreta nominale a due livelli: prosa accademica e stampa.
+3. **STATUTO PERIFRASTICO**: variabile dipendente discreta nominale a due livelli: perifrasi e non perifrasi
+
+## Metodologia
+In questa sede condurrò un'analisi duplice, isolando a turno le due variabili indipendenti per valutare l'effetto di ciascuna sulla variabile dipendente "STATUTO PERIFRASTICO". 
+
+In entrambe le analisi lo strumento statistico ideale per valutare la significatività della relazione tra variabili è il **test del chi-quadro**, adatto quando le due variabili in gioco sono discrete.
+
+### 1. ANALISI CRONOLOGICA
+Vogliamo valutare l'effetto della variabile indipendente "CRONOLOGIA" sulla variabile dipendente "STATUTO PERIFRASTICO": l'uso di "andare a" + infinito con statuto perifrastico ha subito variazioni nel tempo? 
+
+Come anticipato, assumiamo CORIS come corpus rappresentativo della generazione precedente, dal momento che contiene testi redatti dal 1980 al 2000, e Univers-ITA come corpus rappresentativo della generazione odierna, dal momento che coniene testi redatti da studenti universitari tra il 2020 e il 2021. 
+
+In questa prima analisi non viene focalizzata l'attenzione sulla distinzione di registro, perciò saranno esaminate tutte le occorrenze, indipendentemente dall'origine (accademica o giornalistica).
+
+Formuliamo le due ipotesi: H1, o ipotesi “alternativa”, che vorrei supportare con i dati sperimentali, e H0, o ipotesi “nulla”, negazione logica di H1 che auspico di smentire:
+
+* H0: la percentuale di costrutti perifrastici rimane invariata nel tempo;
+* H1: si registra un incremento del costrutto perifrastico nel tempo.
+
+Apriamo il file dati_occorrenze.csv con read.table per visualizzarne la struttura:
+
+```{r}
+dati <- read.table(choose.files(), header=TRUE)
+dati
+```
+
+In questa tabella è possibile visualizzare il numero di occorrenze sul totale di "andare a" + infinito perifrastico e non perifrastico, tratte dalle due sottosezioni "prosa accademica" e "stampa" di entrambi i corpora.
+
+Al fine di un'analisa incentrata sulla variazione temporale, creiamo una tabella che contenga solo le variabili di nostro interesse, per poter in seguito applicare il test chi-quadro. In particolare, creiamo la matrice 2x2 dei dati aggregati per Cronologia:
+
+```{r}
+# 1. Isoliamo le colonne dei conteggi per i due corpora
+coris_perif <- sum(dati$Perifrastico[dati$Cronologia == "CORIS"])
+coris_non_perif <- sum(dati$Non_Perifrastico[dati$Cronologia == "CORIS"])
+
+univita_perif <- sum(dati$Perifrastico[dati$Cronologia == "Univers-ITA"])
+univita_non_perif <- sum(dati$Non_Perifrastico[dati$Cronologia == "Univers-ITA"])
+
+# 2. Uniamo i valori nella matrice 2x2
+tabella_crono <- matrix(c(coris_perif, coris_non_perif, 
+                          univita_perif, univita_non_perif), 
+                        nrow = 2, byrow = TRUE,
+                        dimnames = list(Cronologia = c("CORIS", "Univers-ITA"),
+                                        Esito = c("Perifrastico",
+"Non_Perifrastico")))
+
+# 3. Visualizziamo la tabella
+tabella_crono
+```
+Creiamo un mosaicplot per un'agevole visualizzazione dei dati:
+```{r}
+mosaicplot(tabella_crono, 
+           col = c("skyblue", "coral"), 
+           main = "Comparazione temporale")
+```
+
+Dal grafico risulta piuttosto evidente una discrepanza tra uso perifrastico e non perifrastico in entrambi i corpora. In particolare, si può notare una predilezione netta per l'uso non perifrastico in CORIS e, al contrario, una predilezione per l'uso perifrastico (il target di questo esperimento) in Univers-ITA. Per verificarlo, eseguiamo il test del chi-quadro:
+
+```{r}
+chisq.test(tabella_crono, correct = FALSE)
+```
+Il test ha restituito un p-value notevolmente inferiore rispetto al livello di significatività standard (pari al 5%, ovvero 0.05). Dal punto di vista probabilistico, questo significa che se l'ipotesi nulla di totale indipendenza tra le variabili fosse vera, la probabilità di ottenere per caso una distribuzione campionaria così sbilanciata sarebbe estremamente bassa. Di conseguenza, rifiutiamo l'ipotesi nulla e accettiamo l'ipotesi alternativa: nel corso degli ultimi decenni si è registrato un incremento altamente significativo del costrutto perifrastico. Si presume pertanto che sussista una relazione tra i valori delle variabili e che non si tratti di una fluttuazione dovuta al caso.
+
+### 2. ANALISI DIAFASICA
+Vogliamo valutare l'effetto della variabile indipendente "REGISTRO" sulla variabile dipendente "STATUTO PERIFRASTICO": "andare a" + infinito con valore perifrastico compare in modo significativamente differente nelle due tipologie testuali "prosa accademica" e "stampa"?
+
+In questo caso si procederà suddividendo l'analisi in due sottosezioni, analizzando separatamente le occorrenze di CORIS e Univers-ITA, per evitare sovrapposizioni indebite. 
+
+#### 2.1 CORIS: prosa accademica VS stampa
+Formuliamo le due ipotesi, H1 e H0:
+
+* H0: la percentuale di costrutti perifrastici è analoga in prosa accademica e prosa giornalistica di CORIS;
+* H1: sussiste una variazione numerica dipendente dal registro testuale.
+
+Isoliamo in una tabella le variabili di nostro interesse:
+
+```{r}
+# 1. Creiamo una matrice 2x2 per CORIS
+tabella_coris <- matrix(c(53, 197, 56, 194), nrow = 2, byrow = TRUE,
+                        dimnames = list(Registro = c("Accademico", "Stampa"),
+                                        Esito = c("Perifrastico", "Non_Perifrastico")))
+
+# 2. Visualizziamo la tabella
+tabella_coris
+```
+Creiamo un mosaicplot per un'agevole visualizzazione dei dati:
+```{r}
+mosaicplot(tabella_coris, 
+           col = c("skyblue", "coral"), 
+           main = "Distribuzione perifrasi per registro (CORIS)")
+```
+Da questo grafico risulta immediatamente evidente come il numero di occorrenze perifrastiche rilevato nei due registri testuali sia pressoché analogo. In ogni caso, ricorriamo al test del chi-quadro per constatare se questa lieve differenza di frequenza possa o meno considerarsi significativa.
+
+```{r}
+chisq.test(tabella_coris, correct = FALSE)
+```
+Poichè il p-value è nettamente superiore alla soglia convenzionale 0.05, non possiamo rifiutare l'ipotesi nulla e di conseguenza non possiamo concludere che la variazione di registro sia significativa in termini di comparsa della perifrasi.
+
+#### 2.2 Univers-ITA: prosa accademica VS stampa
+Formuliamo le due ipotesi, H1 e H0:
+
+* H0: la percentuale di costrutti perifrastici è analoga in Univers-ITA (sottocorpus rappresentativo della prosa accademica) e Univers-ITA-ProGior (sottocorpus rappresentativo della stampa)
+* H1: sussiste una variazione numerica dipendente dal registro testuale.
+
+Isoliamo in una tabella le variabili di nostro interesse:
+
+```{r}
+# 1. Creiamo una matrice 2x2 per Univers-ITA
+tabella_uni <- matrix(c(119, 48, 128, 74), nrow = 2, byrow = TRUE,
+                        dimnames = list(Registro = c("Accademico", "Stampa"),
+                                        Esito = c("Perifrastico", "Non_Perifrastico")))
+
+# 2. Visualizziamo la tabella
+tabella_uni
+```
+Creiamo un mosaicplot per un'agevole visualizzazione dei dati:
+
+```{r}
+mosaicplot(tabella_uni, 
+           col = c("skyblue", "coral"), 
+           main = "Distribuzione perifrasi per registro (Univers-ITA)")
+```
+Nel caso del corpus Univers-ITA non è stato possibile raccogliere campioni equi a causa delle ridotte dimensioni del corpus. Sono state infatti rilevate 202 occorrenze totali (comprensive della costruzione sia perifrastica che non perifrastica) per la prosa giornalistica, ovvero in Univers-ITA-ProGior, e 167 totali per la prosa accademica, ovvero in Univers-ITA. In entrambi i casi, i totali risultano inferiori ai campioni di CORIS (250 occorrenze ciascuno), pertanto ho deciso di analizzare tutte le occorrenze disponibili.
+
+Nonostante questo sbilanciamento, la costruzione perifrastica (il target dell'esperimento) sembra comparire in maniera preferenziale nella prosa accademica. Per constatare se si tratti o meno di un effetto significativo applichiamo il test del chi-quadro:
+
+```{r}
+chisq.test(tabella_uni, correct = FALSE)
+```
+Il valore del p-value è inferiore rispetto al caso precedente, ma non è sufficientemente basso (non è inferiore a 0.05) per rigettare l'ipotesi nulla ed accettare l'ipotesi alternativa. Anche nel caso di Univers-ITA, dunque, non possiamo affermare che sussista una differenza significativa nella comparsa della perifrasi in un registro piuttosto che nell'altro.
