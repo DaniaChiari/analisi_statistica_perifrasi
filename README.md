@@ -58,4 +58,4 @@ Puoi consultare l'analisi formattata con i grafici a questo link:
 [Visualizza Report Analisi Chi-Quadrato](https://daniachiari.github.io/analisi_statistica_perifrasi/analisi01_chi_quadrato.html)
 
 Per eseguire l'analisi in locale clonare il repository:
-git clone [https://github.com/DaniaChiari/analisi_statistica_perifrasi.git](https://github.com/DaniaChiari/analisi_statistica_perifrasi.git)
+[https://github.com/DaniaChiari/analisi_statistica_perifrasi.git](https://github.com/DaniaChiari/analisi_statistica_perifrasi.git)
