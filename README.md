@@ -17,7 +17,12 @@ Sono considerate, invece, forme non perifrastiche i casi in cui "andare a" + inf
 - *È aspettare l'alba con gli altri al mare, **andare a fare** colazione e avere sonno per tutto il giorno successivo* [Univers-ITA-ProGior].
 - *Dove sono **andati a finire** i giovani?* [CORIS, prosa accademica].
 
-Ho dedicato l'ultimo capitolo della mia tesi triennale alla raccolta di occorrenze di tale costrutto in testi tratti da due corpora di scritto: CORIS, nelle sottosezioni "prosa accademica" e "stampa", selezionando come arco temporale 1980-2000 e Univers-ITA (2020-2021), in particolare nell'omonimo sottocorpus "Univers-ITA", contenente testi di taglio accademico redatti da studenti, e nel sottocorpus "Univers-ITA-ProGior", contenente testi giornalistici sempre redatti da studenti. La scelta di tali corpora e di tali sottosezioni non è casuale: da un lato, desideravo verificare un'eventuale incremento nell'utilizzo della perifrasi, dall'altro, valutare le percentuali di occorrenze in due registri testuali distinti: la prosa accademica e la prosa giornalistica. Per quanto concerne la prima analisi, ho assunto CORIS come rappresentativo della generazione precedente, dal momento che ho selezionato testi redatti dal 1980 al 2000 e Univers-ITA come rappresentativo della generazione odierna, poiché contiene testi scritti da studenti universitari dal 2020 al 2021. La seconda analisi è, invece, di natura diafasica, poiché si propone di verificare in quali testi, accademici o giornalistici, la perifrasi compare maggiormente. 
+Ho dedicato l'ultimo capitolo della mia tesi triennale alla raccolta di occorrenze di tale costrutto, tratte da testi scritti riconducibili a due corpora: 
+
+1. CORIS (1980-2000): le occorrenze sono state ricavate dalle sue sottosezioni "prosa accademica" e "stampa", selezionando come arco temporale 1980-2000;
+2. Univers-ITA (2020-2021): le occorrenze sono state ricavate dall'omonimo sottocorpus "Univers-ITA", contenente testi di taglio accademico redatti da studenti, e dal sottocorpus "Univers-ITA-ProGior", contenente testi giornalistici sempre redatti da studenti. Tutti i testi del corpus Univers-ITA sono stati prodotti tra il 2020 e il 2021.
+
+La scelta di tali corpora e di tali sottosezioni non è casuale: da un lato, desideravo verificare un'eventuale incremento nell'utilizzo della perifrasi, dall'altro, valutare le percentuali di occorrenze in due registri testuali distinti: la prosa accademica e la prosa giornalistica. Per quanto concerne la prima analisi, ho assunto CORIS come rappresentativo della generazione precedente, dal momento che ho selezionato testi redatti dal 1980 al 2000, e Univers-ITA come rappresentativo della generazione odierna, poiché contiene testi scritti da studenti universitari dal 2020 al 2021. La seconda analisi è, invece, di natura diafasica, poiché si propone di verificare in quali testi, accademici o giornalistici, la perifrasi compare con maggiore frequenza. 
 
 Riporto qui i dati ottenuti in formato tabellare:
 
@@ -32,6 +37,3 @@ Specifico che, per CORIS, ho selezionato casualmente 250 occorrenze per ciascun 
 
 ## Metodologia
 Per i limiti imposti dalla tesi triennale avevo riportato questi dati senza sottoporli ad analisi statistica, e quindi senza constatare l'eventuale presenza di una relazione significativa tra i dati. Poiché in magistrale e durante la DGfS Summer School (Bielefeld, Germania) ho acquisito competenze in statistica inferenziale (frequentista e bayesiana) e imparato a usare R e RStudio, ho deciso di condurre un'analisi statistica su questi dati. 
-
-
-
