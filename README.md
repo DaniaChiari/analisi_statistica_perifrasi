@@ -37,3 +37,25 @@ Specifico che, per CORIS, tra le migliaia di occorrenze rinvenute attraverso il 
 
 ## Metodologia
 Per i limiti imposti dalla tesi triennale avevo riportato questi dati senza sottoporli ad analisi statistica, e quindi senza constatare l'eventuale presenza di una relazione significativa tra i dati. Poiché in magistrale e durante la DGfS Summer School (Bielefeld, Germania) ho acquisito competenze in statistica inferenziale (frequentista e bayesiana) e imparato a usare R e RStudio, ho deciso di condurre un'analisi statistica su questi dati. 
+
+## Struttura
+```
+analisi_statistica_perifrasi/
+├── data/
+│   └── dati_occorrenze.csv         # Dataset con i conteggi disaggregati
+├── analisi01_chi_quadrato.Rmd      # Sorgente R Markdown (codice, test e commenti)
+├── analisi01_chi_quadrato.html     # Report renderizzato in HTML per il web
+├── .gitignore
+└── README.md
+```
+
+## Dati
+### dati_occorrenze.csv
+Il file in questione contiene i conteggi relativi alle occorrenze perifrastiche e non perifrastiche in ciascuna delle due sottosezioni (prosa accademica e stampa) di CORIS e Univers-ITA.
+
+## Esecuzione e visualizzazione
+Puoi consultare l'analisi formattata con i grafici a questo link:
+[Visualizza Report Analisi Chi-Quadrato](https://daniachiari.github.io/analisi_statistica_perifrasi/analisi01_chi_quadrato.html)
+
+Per eseguire l'analisi in locale clonare il repository:
+[https://github.com/DaniaChiari/analisi_statistica_perifrasi.git](https://github.com/DaniaChiari/analisi_statistica_perifrasi.git)
