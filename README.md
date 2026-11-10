@@ -64,15 +64,9 @@ install.packages(c("rmarkdown", "knitr"))
 
 ## Esecuzione e visualizzazione
 ### Esecuzione in locale
-1. Clona il repository:
-   ```
-   git clone https://github.com/DaniaChiari/analisi_statistica_perifrasi.git
-   ```
+1. Clona il repository: https://github.com/DaniaChiari/analisi_statistica_perifrasi.git
 2. Apri `analisi01_chi_quadrato.Rmd` in RStudio.
-3. Clicca su **Knit** per rigenerare il report HTML, oppure esegui da console:
-   ```r
-   rmarkdown::render("analisi01_chi_quadrato.Rmd")
-   ```
+3. Clicca su **Knit** per rigenerare il report HTML, oppure esegui da console: render("analisi01_chi_quadrato.Rmd")
 ### Visualizzazione
 Puoi consultare l'analisi formattata con i grafici a questo link:
 [Visualizza Report Analisi Chi-Quadrato](https://daniachiari.github.io/analisi_statistica_perifrasi/analisi01_chi_quadrato.html)
