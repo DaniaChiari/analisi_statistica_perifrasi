@@ -42,7 +42,7 @@ Per i limiti imposti dalla tesi triennale avevo riportato questi dati senza sott
 ```
 analisi_statistica_perifrasi/
 ├── data/
-│   └── dati_occorrenze.csv         # Dataset con i conteggi disaggregati
+│   └── dati_occorrenze.txt         # Dataset con i conteggi disaggregati
 ├── analisi01_chi_quadrato.Rmd      # Sorgente R Markdown (codice, test e commenti)
 ├── analisi01_chi_quadrato.html     # Report renderizzato in HTML per il web
 ├── .gitignore
@@ -50,12 +50,29 @@ analisi_statistica_perifrasi/
 ```
 
 ## Dati
-### dati_occorrenze.csv
+### dati_occorrenze.txt
 Il file in questione contiene i conteggi relativi alle occorrenze perifrastiche e non perifrastiche in ciascuna delle due sottosezioni (prosa accademica e stampa) di CORIS e Univers-ITA.
 
+## Requisiti
+- **R** (versione usata: 4.6.1)
+- **RStudio** (consigliato; include Pandoc, necessario per generare il report)
+- Pacchetti: `rmarkdown` e `knitr`. L'analisi usa esclusivamente funzioni base di R (`read.csv`, `chisq.test`, `mosaicplot`).
+
+```r
+install.packages(c("rmarkdown", "knitr"))
+```
+
 ## Esecuzione e visualizzazione
+### Esecuzione in locale
+1. Clona il repository:
+   ```
+   git clone https://github.com/DaniaChiari/analisi_statistica_perifrasi.git
+   ```
+2. Apri `analisi01_chi_quadrato.Rmd` in RStudio.
+3. Clicca su **Knit** per rigenerare il report HTML, oppure esegui da console:
+   ```r
+   rmarkdown::render("analisi01_chi_quadrato.Rmd")
+   ```
+### Visualizzazione
 Puoi consultare l'analisi formattata con i grafici a questo link:
 [Visualizza Report Analisi Chi-Quadrato](https://daniachiari.github.io/analisi_statistica_perifrasi/analisi01_chi_quadrato.html)
-
-Per eseguire l'analisi in locale clonare il repository:
-[https://github.com/DaniaChiari/analisi_statistica_perifrasi.git](https://github.com/DaniaChiari/analisi_statistica_perifrasi.git)
