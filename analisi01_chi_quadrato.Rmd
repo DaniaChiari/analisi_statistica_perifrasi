@@ -29,7 +29,7 @@ Formuliamo le due ipotesi: H1, o ipotesi “alternativa”, che vorrei supportar
 * H0: la percentuale di costrutti perifrastici rimane invariata nel tempo;
 * H1: si registra un incremento del costrutto perifrastico nel tempo.
 
-Apriamo il file dati_occorrenze.csv con read.table per visualizzarne la struttura:
+Apriamo il file dati_occorrenze.txt con read.table per visualizzarne la struttura:
 
 ```{r}
 dati <- read.table(choose.files(), header=TRUE)
