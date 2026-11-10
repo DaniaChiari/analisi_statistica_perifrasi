@@ -1,0 +1,5 @@
+Cronologia Registro Perifrastico Non_Perifrastico Totale
+CORIS Accademico 53 197 250
+CORIS Stampa 56 194 250
+Univers-ITA Accademico 119 48 167
+Univers-ITA Stampa 128 74 202
