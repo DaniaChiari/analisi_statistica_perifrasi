@@ -60,12 +60,12 @@ Il file in questione contiene i conteggi relativi alle occorrenze perifrastiche 
 
 ## Esecuzione e visualizzazione
 ### Esecuzione in locale
-1. Clona il repository
-2. Apri `analisi01_chi_quadrato.Rmd` in RStudio.
-3. Clicca su **Knit** per rigenerare il report HTML, oppure esegui da console:
+1. Clonare il repository
+2. Aprire `analisi01_chi_quadrato.Rmd` in RStudio.
+3. Cliccare su **Knit** per rigenerare il report HTML oppure, se non si ha RStudio, eseguire dalla console di R (nella cartella del progetto; serve Pandoc installato):
    ```r
    rmarkdown::render("analisi01_chi_quadrato.Rmd")
    ```
 ### Visualizzazione
-Puoi consultare l'analisi formattata con i grafici a questo link:
+L'analisi formattata con i grafici può essere consultata al seguente link:
 [Visualizza Report Analisi Chi-Quadrato](https://daniachiari.github.io/analisi_statistica_perifrasi/analisi01_chi_quadrato.html)
