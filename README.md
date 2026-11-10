@@ -42,7 +42,7 @@ Per i limiti imposti dalla tesi triennale avevo riportato questi dati senza sott
 ```
 analisi_statistica_perifrasi/
 ├── data/
-│   └── dati_occorrenze.csv         # Dataset con i conteggi disaggregati
+│   └── dati_occorrenze.txt         # Dataset con i conteggi disaggregati
 ├── analisi01_chi_quadrato.Rmd      # Sorgente R Markdown (codice, test e commenti)
 ├── analisi01_chi_quadrato.html     # Report renderizzato in HTML per il web
 ├── .gitignore
@@ -50,12 +50,22 @@ analisi_statistica_perifrasi/
 ```
 
 ## Dati
-### dati_occorrenze.csv
+### dati_occorrenze.txt
 Il file in questione contiene i conteggi relativi alle occorrenze perifrastiche e non perifrastiche in ciascuna delle due sottosezioni (prosa accademica e stampa) di CORIS e Univers-ITA.
 
-## Esecuzione e visualizzazione
-Puoi consultare l'analisi formattata con i grafici a questo link:
-[Visualizza Report Analisi Chi-Quadrato](https://daniachiari.github.io/analisi_statistica_perifrasi/analisi01_chi_quadrato.html)
+## Requisiti
+- **R** (versione usata: 4.6.1)
+- **RStudio** (consigliato; include Pandoc, necessario per generare il report)
+- Pacchetti: `rmarkdown` e `knitr`. L'analisi usa esclusivamente funzioni base di R (`read.csv`, `chisq.test`, `mosaicplot`).
 
-Per eseguire l'analisi in locale clonare il repository:
-[https://github.com/DaniaChiari/analisi_statistica_perifrasi.git](https://github.com/DaniaChiari/analisi_statistica_perifrasi.git)
+## Esecuzione e visualizzazione
+### Esecuzione in locale
+1. Clonare il repository
+2. Aprire `analisi01_chi_quadrato.Rmd` in RStudio.
+3. Cliccare su **Knit** per rigenerare il report HTML oppure, se non si ha RStudio, eseguire dalla console di R (nella cartella del progetto; serve Pandoc installato):
+   ```r
+   rmarkdown::render("analisi01_chi_quadrato.Rmd")
+   ```
+### Visualizzazione
+L'analisi formattata con i grafici può essere consultata al seguente link:
+[Visualizza Report Analisi Chi-Quadrato](https://daniachiari.github.io/analisi_statistica_perifrasi/analisi01_chi_quadrato.html)
