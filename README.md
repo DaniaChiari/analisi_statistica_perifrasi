@@ -1,5 +1,5 @@
 # ANALISI STATISTICA SU DATI DI TESI TRIENNALE
-Analisi statistica in R sui dati raccolti per la tesi triennale: ***Il mutamento dall'alto "andare a" + infinito: una perifrasi dell'italiano neostandard"***
+Analisi statistica in R sui dati raccolti per la tesi triennale: ***Il mutamento dall'alto "andare a" + infinito: una perifrasi dell'italiano neostandard***
 
 **Autrice**: Dania Chiari
 
