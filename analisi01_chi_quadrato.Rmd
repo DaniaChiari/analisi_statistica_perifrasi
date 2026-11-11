@@ -20,7 +20,7 @@ In entrambe le analisi lo strumento statistico ideale per valutare la significat
 ### 1. ANALISI CRONOLOGICA
 Vogliamo valutare l'effetto della variabile indipendente "CRONOLOGIA" sulla variabile dipendente "STATUTO PERIFRASTICO": l'uso di "andare a" + infinito con statuto perifrastico ha subito variazioni nel tempo? 
 
-Come anticipato, assumiamo CORIS come corpus rappresentativo della generazione precedente, dal momento che contiene testi redatti dal 1980 al 2000, e Univers-ITA come corpus rappresentativo della generazione odierna, dal momento che coniene testi redatti da studenti universitari tra il 2020 e il 2021. 
+Come anticipato, assumiamo CORIS come corpus rappresentativo della generazione precedente, dal momento che contiene testi redatti dal 1980 al 2000, e Univers-ITA come corpus rappresentativo della generazione odierna, dal momento che contiene testi redatti da studenti universitari tra il 2020 e il 2021. 
 
 In questa prima analisi non viene focalizzata l'attenzione sulla distinzione di registro, perciò saranno esaminate tutte le occorrenze, indipendentemente dall'origine (accademica o giornalistica).
 
@@ -38,7 +38,7 @@ dati
 
 In questa tabella è possibile visualizzare il numero di occorrenze sul totale di "andare a" + infinito perifrastico e non perifrastico, tratte dalle due sottosezioni "prosa accademica" e "stampa" di entrambi i corpora.
 
-Al fine di un'analisa incentrata sulla variazione temporale, creiamo una tabella che contenga solo le variabili di nostro interesse, per poter in seguito applicare il test chi-quadro. In particolare, creiamo la matrice 2x2 dei dati aggregati per Cronologia:
+Ai fini di un'analisi incentrata sulla variazione temporale, creiamo una tabella che contenga solo le variabili di nostro interesse, per poter in seguito applicare il test chi-quadro. In particolare, creiamo la matrice 2x2 dei dati aggregati per Cronologia:
 
 ```{r}
 # 1. Isoliamo le colonne dei conteggi per i due corpora
@@ -65,7 +65,6 @@ mosaicplot(tabella_crono,
            col = c("skyblue", "coral"), 
            main = "Comparazione temporale")
 ```
-
 Dal grafico risulta piuttosto evidente una discrepanza tra uso perifrastico e non perifrastico in entrambi i corpora. In particolare, si può notare una predilezione netta per l'uso non perifrastico in CORIS e, al contrario, una predilezione per l'uso perifrastico (il target di questo esperimento) in Univers-ITA. Per verificarlo, eseguiamo il test del chi-quadro:
 
 ```{r}
