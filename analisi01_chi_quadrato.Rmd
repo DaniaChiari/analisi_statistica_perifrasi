@@ -20,7 +20,7 @@ In entrambe le analisi lo strumento statistico ideale per valutare la significat
 ### 1. ANALISI CRONOLOGICA
 Vogliamo valutare l'effetto della variabile indipendente "CRONOLOGIA" sulla variabile dipendente "STATUTO PERIFRASTICO": l'uso di "andare a" + infinito con statuto perifrastico ha subito variazioni nel tempo? 
 
-Come anticipato, assumiamo CORIS come corpus rappresentativo della generazione precedente, dal momento che ho selezionato testi redatti dal 1980 al 2000, e Univers-ITA come corpus rappresentativo della generazione odierna, dal momento che contiene testi redatti da studenti universitari tra il 2016 e il 2021. 
+Come anticipato, assumiamo CORIS come corpus rappresentativo della generazione precedente, dal momento che ho selezionato testi redatti dal 1980 al 2000, e Univers-ITA come corpus rappresentativo della generazione odierna, in quanto contiene testi redatti da studenti universitari tra il 2016 e il 2021. 
 
 In questa prima analisi non viene focalizzata l'attenzione sulla distinzione di registro, perciò saranno esaminate tutte le occorrenze, indipendentemente dall'origine (accademica o giornalistica).
 
